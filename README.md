@@ -1,4 +1,56 @@
-# Price Claw Chrome Extension MVP
+# Price Claw Chrome Extension
+
+## Temporary Installation Guide
+
+Price Claw is currently waiting for Google Chrome Web Store developer account approval. Until the store listing is available, install it as an unpacked Chrome extension.
+
+### 1. Download The Extension Files
+
+Download or clone this repository to your computer.
+
+If you downloaded a ZIP file, unzip it first.
+
+### 2. Build The Extension
+
+Open a terminal in the repository folder and run:
+
+```powershell
+npm install
+npm run build
+```
+
+This creates a `dist/` folder. Chrome will load the extension from that folder.
+
+### 3. Load It In Chrome
+
+1. Open Chrome.
+2. Go to `chrome://extensions`.
+3. Turn on `Developer mode` in the top-right corner.
+4. Click `Load unpacked`.
+5. Select the `dist/` folder from this repository.
+6. Pin `Price Claw` from the Chrome extensions menu if you want quick access.
+
+When you update the extension files, run `npm run build` again, then click the reload button on the Price Claw card in `chrome://extensions`.
+
+### 4. Configure Your LLM API Key
+
+1. Click the Price Claw extension icon.
+2. Click `Settings`.
+3. Choose your LLM provider.
+4. Enter your own API key and model.
+5. Save the settings.
+
+The API key is stored locally in Chrome extension storage. It is not stored on a Price Claw server.
+
+### 5. Extract Price Data
+
+1. Open a product or shopping page.
+2. Click the Price Claw extension icon.
+3. Click `Extract Current Page`.
+4. Review the generated JSON.
+5. Click `Export JSON` to save the result locally.
+
+If the popup feels too small, click `Resize Window` to open a resizable workspace window. You can also change the UI scale from 80% to 150%.
 
 This is the local-only, BYOK Chrome extension version of Price Claw. It does not use the existing Electron, FastAPI, Playwright, Tesseract, MongoDB, or Mongo Inspector runtime.
 
@@ -23,14 +75,11 @@ This is the local-only, BYOK Chrome extension version of Price Claw. It does not
 ## Development
 
 ```powershell
-cd extension
 npm install
 npm run typecheck
 npm test
 npm run build
 ```
-
-Load `extension/dist` as an unpacked extension in Chrome.
 
 ## Chrome Web Store Notes
 
