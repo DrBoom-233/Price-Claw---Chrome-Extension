@@ -4,35 +4,28 @@
 
 Price Claw is currently waiting for Google Chrome Web Store developer account approval. Until the store listing is available, install it as an unpacked Chrome extension.
 
-### 1. Download The Extension Files
+### 1. Download The Extension
 
-Download or clone this repository to your computer.
+1. Click `Code` on the GitHub repository page.
+2. Click `Download ZIP`.
+3. Unzip the downloaded file.
 
-If you downloaded a ZIP file, unzip it first.
+The repository already includes the built `dist/` folder. Regular users do
+not need Node.js or npm.
 
-### 2. Build The Extension
-
-Open a terminal in the repository folder and run:
-
-```powershell
-npm install
-npm run build
-```
-
-This creates a `dist/` folder. Chrome will load the extension from that folder.
-
-### 3. Load It In Chrome
+### 2. Load It In Chrome
 
 1. Open Chrome.
 2. Go to `chrome://extensions`.
 3. Turn on `Developer mode` in the top-right corner.
 4. Click `Load unpacked`.
-5. Select the `dist/` folder from this repository.
+5. Select the `dist/` folder inside the unzipped repository.
 6. Pin `Price Claw` from the Chrome extensions menu if you want quick access.
 
-When you update the extension files, run `npm run build` again, then click the reload button on the Price Claw card in `chrome://extensions`.
+When a new version is released, download and unzip the repository again, then
+load the new `dist/` folder or click the reload button on the Price Claw card.
 
-### 4. Configure Your LLM API Key
+### 3. Configure Your LLM API Key
 
 1. Click the Price Claw extension icon.
 2. Click `Settings`.
@@ -42,7 +35,7 @@ When you update the extension files, run `npm run build` again, then click the r
 
 The API key is stored locally in Chrome extension storage. It is not stored on a Price Claw server.
 
-### 5. Extract Price Data
+### 4. Extract Price Data
 
 1. Open a product or shopping page.
 2. Click the Price Claw extension icon.
@@ -80,6 +73,9 @@ npm run typecheck
 npm test
 npm run build
 ```
+
+Commit the regenerated `dist/` folder whenever source changes are released so
+the GitHub ZIP remains ready to load in Chrome.
 
 ## Chrome Web Store Notes
 

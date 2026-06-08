@@ -1,0 +1,1 @@
+import{c as o,j as e,r,A as t}from"./App.js";import"./storage.js";const s=new URLSearchParams(window.location.search).get("surface")==="window"?"window":"popup";o.createRoot(document.getElementById("root")).render(e.jsx(r.StrictMode,{children:e.jsx(t,{surface:s})}));
